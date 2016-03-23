@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app = "worldFood">
+    <head>
+		<link rel = "stylesheet" type="text/css" href = "style.css" />
+		<script type = "text/javascript" src = "angular.min.js"></script>
+		<script type = "text/javascript" src = "angularApp.js"></script>
+	</head>
+	<body ng-controller = "FoodController as food">
+		<div class = "header">
+			FOOD FROM THE WORLD
+		</div>
+		<div class = "main">
+		 <section ng-controller = "TabController1 as tab1">
+		   <ul class="countries">
+            <li ng-class = "{active:tab1.isSet(1)}" type= none>
+             <button href ng-click = "tab1.setTab(1)">{{food.products[0].name}}</button>
+			</li>
+			<li ng-class = "{active:tab1.isSet(2)}" type= none>
+             <button href ng-click = "tab1.setTab(2)">{{food.products[1].name}}</button>
+			</li>
+			<li ng-class = "{active:tab1.isSet(3)}" type= none>
+             <button href ng-click = "tab1.setTab(3)">{{food.products[2].name}}</button>
+			</li>
+			<li ng-class = "{active:tab1.isSet(4)}" type= none>
+             <button href ng-click = "tab1.setTab(4)">{{food.products[3].name}}</button>
+			</li>
+          </ul>
+		  <section ng-controller = "TabController2 as tab2">
+				<ul class = "options">
+					<div ng-show = "tab1.isSet(1)">
+					 <li ng-class = "{active:tab2.isSet(1)}" type= none>
+					  <button href ng-click = "tab2.setTab(1)">{{food.products[0].options[0].name}}</button>
+					 </li>
+					 <li ng-class = "{active:tab2.isSet(2)}" type= none>
+					  <button href ng-click = "tab2.setTab(2)">{{food.products[0].options[1].name}}</button>
+					 </li>
+					  <li ng-class = "{active:tab2.isSet(3)}" type= none>
+					  <button href ng-click = "tab2.setTab(3)">{{food.products[0].options[2].name}}</button>
+					 </li>
+					  <li ng-class = "{active:tab2.isSet(4)}" type= none>
+					  <button href ng-click = "tab2.setTab(4)">{{food.products[0].options[3].name}}</button>
+					 </li>
+					</div>
+					<div ng-show = "tab1.isSet(2)">
+					 <li ng-class = "{active:tab2.isSet(1)}" type= none>
+					  <button href ng-click = "tab2.setTab(1)">{{food.products[1].options[0].name}}</button>
+					 </li>
+					 <li ng-class = "{active:tab2.isSet(2)}" type= none>
+					  <button href ng-click = "tab2.setTab(2)">{{food.products[1].options[1].name}}</button>
+					 </li>
+					 <li ng-class = "{active:tab2.isSet(3)}" type= none>
+					  <button href ng-click = "tab2.setTab(3)">{{food.products[1].options[2].name}}</button>
+					 </li>
+					</div>
+					<div ng-show = "tab1.isSet(3)">
+					 <li ng-class = "{active:tab2.isSet(1)}" type= none>
+					  <button href ng-click = "tab2.setTab(1)">{{food.products[2].options[0].name}}</button>
+					 </li>
+					 <li ng-class = "{active:tab2.isSet(2)}" type= none>
+					  <button href ng-click = "tab2.setTab(2)">{{food.products[2].options[1].name}}</button>
+					 </li>
+					 <li ng-class = "{active:tab2.isSet(3)}" type= none>
+					  <button href ng-click = "tab2.setTab(3)">{{food.products[2].options[2].name}}</button>
+					 </li>
+					</div>
+					<div ng-show = "tab1.isSet(4)">
+					 <li ng-class = "{active:tab2.isSet(1)}" type= none>
+					  <button href ng-click = "tab2.setTab(1)">{{food.products[3].options[0].name}}</button>
+					 </li>
+					 <li ng-class = "{active:tab2.isSet(2)}" type= none>
+					  <button href ng-click = "tab2.setTab(2)">{{food.products[3].options[1].name}}</button>
+					 </li>
+					 <li ng-class = "{active:tab2.isSet(3)}" type= none>
+					  <button href ng-click = "tab2.setTab(3)">{{food.products[3].options[2].name}}</button>
+					 </li>
+					</div>
+				</ul>
+			 <div class = "image">
+			  <div ng-show = "tab1.isSet(1)">
+			   <img ng-show = "tab2.isSet(1)" ng-src = "{{food.products[0].options[0].image}}">
+			   <img ng-show = "tab2.isSet(2)" ng-src = "{{food.products[0].options[1].image}}">
+			   <img ng-show = "tab2.isSet(3)" ng-src = "{{food.products[0].options[2].image}}">
+			   <img ng-show = "tab2.isSet(4)" ng-src = "{{food.products[0].options[3].image}}">
+			 </div>
+			 <div ng-show = "tab1.isSet(2)">
+			   <img ng-show = "tab2.isSet(1)" ng-src = "{{food.products[1].options[0].image}}">
+			   <img ng-show = "tab2.isSet(2)" ng-src = "{{food.products[1].options[1].image}}">
+			   <img ng-show = "tab2.isSet(3)" ng-src = "{{food.products[1].options[2].image}}">
+			 </div>
+			 <div ng-show = "tab1.isSet(3)">
+			   <img ng-show = "tab2.isSet(1)" ng-src = "{{food.products[2].options[0].image}}">
+			   <img ng-show = "tab2.isSet(2)" ng-src = "{{food.products[2].options[1].image}}">
+			   <img ng-show = "tab2.isSet(3)" ng-src = "{{food.products[2].options[2].image}}">
+			 </div>
+			 <div ng-show = "tab1.isSet(4)">
+			   <img ng-show = "tab2.isSet(1)" ng-src = "{{food.products[3].options[0].image}}">
+			   <img ng-show = "tab2.isSet(2)" ng-src = "{{food.products[3].options[1].image}}">
+			   <img ng-show = "tab2.isSet(3)" ng-src = "{{food.products[3].options[2].image}}">
+			 </div>
+		  </section>
+		 </section>
+		</div>
+		<div class = "footer">
+			© כל הזכויות שמורות לאלעד סעדיה!
+		</div>
+	</body>
+</html>
