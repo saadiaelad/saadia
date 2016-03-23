@@ -1,0 +1,55 @@
+body {
+	background-color:black;
+}
+.header{
+	top: 0;
+	height: 120px;
+	background-color: #ff3333;
+	font-size:60px;
+	text-align:center;
+}
+
+.main{
+	top: 120px;
+	height: 800px;
+	background-color: #ffff99;
+}
+
+.countries{
+	height:110px;
+	top: 0;
+	background-color:#ccffcc;
+}
+
+.options{
+	height:110px;
+	top: 100px;
+	background-color:#ccffff;
+}
+
+.footer{
+	top: 770px;
+	height:30px;
+	background-color:white;
+	direction: rtl;
+}
+
+
+
+img{
+	height:530px;
+	width:650px;
+	margin-left:500px;
+}
+
+li{
+	display:inline;
+	margin-left:10px;
+}
+
+button{
+	height:100px;
+	width:250px;
+	font-size:30px;
+	box-shadow: 5px 5px black;
+}
